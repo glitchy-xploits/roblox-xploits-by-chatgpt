@@ -349,13 +349,26 @@ rainingMc.Name = "rainingMc"
 rainingMc.Text = "Raining McDonald's"
 rainingMc.Size = UDim2.new(0, 120, 0, 40)
 rainingMc.Position = UDim2.new(0, 20, 0, 310)
-rainingMc.BackgroundColor3 = Color3.new(0, 0, 0)
+rainingMc.BackgroundColor3 = Color3.new0, 0, 0)
 rainingMc.BorderColor3 = Color3.new(0, 1, 0)
 rainingMc.BorderSizePixel = 2
 rainingMc.TextColor3 = Color3.new(0, 1, 0)
 rainingMc.Font = Enum.Font.Code
 rainingMc.TextScaled = true
 rainingMc.Parent = Frame
+
+local discoFog = Instance.new("TextButton")
+discoFog.Name = "discoFog"
+discoFog.Text = "Disco Fog"
+discoFog.Size = UDim2.new(0, 120, 0, 40)
+discoFog.Position = UDim2.new(0, 20, 0, 310)
+discoFog.BackgroundColor3 = Color3.new(0, 0, 0)
+discoFog.BorderColor3 = Color3.new(0, 1, 0)
+discoFog.BorderSizePixel = 2
+discoFog.TextColor3 = Color3.new(0, 1, 0)
+discoFog.Font = Enum.Font.Code
+discoFog.TextScaled = true
+discoFog.Parent = Frame
 
 -- == SKY BUTTON FUNCTION ==
 SkyButton.MouseButton1Click:Connect(function()
@@ -3886,4 +3899,11 @@ end
 coroutine.wrap(createRainToads)()
 
 Sky("6266062383") -- Here they change the skybox id 
+end)
+
+discoFog.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+    RequestCommand:InvokeServer(";fog 20 20")
+    RequestCommand:InvokeServer(";disco")
 end)

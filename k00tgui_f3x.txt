@@ -3902,7 +3902,7 @@ Sky("6266062383") -- Here they change the skybox id
 end)
 
 discoFog.MouseButton1Click:Connect(function()
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
     RequestCommand:InvokeServer(";fog 20 20")
     RequestCommand:InvokeServer(";disco")
